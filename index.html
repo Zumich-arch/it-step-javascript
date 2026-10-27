@@ -1,0 +1,812 @@
+<title>Домашні завдання з JavaScript</title>
+<meta name="description" content="Домашні завдання з JavaScript, розв'язані по пунктах, з кодом для кожного завдання.">
+<link rel="stylesheet" href="styles.css">
+
+<div class="scrim" id="scrim"></div>
+
+<div class="shell">
+  <aside class="rail" id="rail">
+    <div class="rail__brand">Домашні завдання JS</div>
+    <p class="rail__sub">Зміст</p>
+    <button class="theme-toggle" id="themeToggle" type="button">Тема: авто</button>
+    <nav aria-label="Зміст">
+      <div>
+        <div class="rail__group-title">Змінні та цикли</div>
+        <div class="rail__links">
+          <a class="rail__link" href="#variables"><small>01</small> Змінні</a>
+          <a class="rail__link" href="#loops"><small>02</small> Цикли</a>
+        </div>
+      </div>
+      <div>
+        <div class="rail__group-title">Функції</div>
+        <div class="rail__links">
+          <a class="rail__link" href="#recursion"><small>03</small> Рекурсія</a>
+          <a class="rail__link" href="#functions"><small>04</small> Функції</a>
+        </div>
+      </div>
+      <div>
+        <div class="rail__group-title">Структури даних</div>
+        <div class="rail__links">
+          <a class="rail__link" href="#objects"><small>05</small> Об'єкти</a>
+          <a class="rail__link" href="#arrays"><small>06</small> Масиви</a>
+        </div>
+      </div>
+      <div>
+        <div class="rail__group-title">ООП</div>
+        <div class="rail__links">
+          <a class="rail__link" href="#oop-html"><small>07</small> Геометрія і HTML-класи</a>
+          <a class="rail__link" href="#oop-marker"><small>08</small> Маркер, дата, таблиця</a>
+        </div>
+      </div>
+      <div>
+        <div class="rail__group-title">DOM-застосунки</div>
+        <div class="rail__links">
+          <a class="rail__link" href="#goals"><small>09</small> Список цілей</a>
+          <a class="rail__link" href="#cart"><small>10</small> Кошик покупок</a>
+          <a class="rail__link" href="#colors"><small>11</small> Палітра + Cookie</a>
+        </div>
+      </div>
+      <div>
+        <div class="rail__group-title">Мережа та асинхронність</div>
+        <div class="rail__links">
+          <a class="rail__link" href="#movies"><small>12</small> Пошук фільмів</a>
+          <a class="rail__link" href="#promises"><small>13</small> Promises / async</a>
+          <a class="rail__link" href="#server"><small>14</small> Взаємодія із сервером</a>
+        </div>
+      </div>
+    </nav>
+  </aside>
+
+  <div>
+    <div class="topbar">
+      <button class="icon-btn" id="menuBtn" type="button">☰ Зміст</button>
+      <b>Домашні завдання JS</b>
+      <button class="theme-toggle" id="themeToggleMobile" type="button" onclick="document.getElementById('themeToggle').click()">◐</button>
+    </div>
+
+    <main id="content">
+      <div class="hero">
+        <h1>Домашні завдання з JavaScript</h1>
+        <p>Зібрав усі ДЗ в одному місці, щоб не кидати купу окремих html-файлів. Кожен пункт можна одразу перевірити вводите свої дані і тиснете кнопку. Під кожним розділом є «Показати код», якщо треба подивитись, що саме я написав.</p>
+      </div>
+
+      <!-- CHAPTERS -->
+
+      <section class="chapter" id="variables">
+        <div class="chapter__head"><span class="chapter__num">01</span><h2>Вступ до JavaScript. Змінні</h2></div>
+        <details class="code-panel" data-code-src="js/01-variables.js"><summary>Показати код (js/01-variables.js)</summary><pre class="mono"></pre></details>
+        <p class="chapter__note">В завданні просили prompt() і alert(), але перевіряти так незручно (вікно браузера кожного разу вилазить), тому зробив звичайні поля вводу. Логіка та сама, просто беру значення з input, а не з prompt.</p>
+        <div class="grid">
+
+          <div class="ex" id="v1">
+            <div class="ex__head"><span class="ex__num">1</span><div><div class="ex__title">Привітання</div><div class="ex__desc">Ім'я → «Привіт, (ім'я)!»</div></div></div>
+            <div class="controls">
+              <div class="field"><label for="v1-name">Ім'я</label><input id="v1-name" type="text" placeholder="Олена"></div>
+              <button data-act="v1">Привітати</button>
+            </div>
+            <div class="output" id="v1-out"></div>
+          </div>
+
+          <div class="ex" id="v2">
+            <div class="ex__head"><span class="ex__num">2</span><div><div class="ex__title">Скільки років</div><div class="ex__desc">Рік народження → вік. Поточний рік - <code class="mono">const CURRENT_YEAR = 2026</code>.</div></div></div>
+            <div class="controls">
+              <div class="field"><label for="v2-year">Рік народження</label><input id="v2-year" type="number" value="2006" min="1900" max="2026"></div>
+              <button data-act="v2">Порахувати</button>
+            </div>
+            <div class="output" id="v2-out"></div>
+          </div>
+
+          <div class="ex" id="v3">
+            <div class="ex__head"><span class="ex__num">3</span><div><div class="ex__title">Периметр квадрата</div><div class="ex__desc">Сторона → периметр</div></div></div>
+            <div class="controls">
+              <div class="field"><label for="v3-side">Сторона</label><input id="v3-side" type="number" value="5" min="0" step="0.1"></div>
+              <button data-act="v3">Порахувати</button>
+            </div>
+            <div class="output" id="v3-out"></div>
+          </div>
+
+          <div class="ex" id="v4">
+            <div class="ex__head"><span class="ex__num">4</span><div><div class="ex__title">Площа кола</div><div class="ex__desc">Радіус → площа</div></div></div>
+            <div class="controls">
+              <div class="field"><label for="v4-r">Радіус</label><input id="v4-r" type="number" value="3" min="0" step="0.1"></div>
+              <button data-act="v4">Порахувати</button>
+            </div>
+            <div class="output" id="v4-out"></div>
+          </div>
+
+          <div class="ex" id="v5">
+            <div class="ex__head"><span class="ex__num">5</span><div><div class="ex__title">Швидкість у дорозі</div><div class="ex__desc">Відстань і час → потрібна швидкість</div></div></div>
+            <div class="controls">
+              <div class="field"><label for="v5-km">Відстань, км</label><input id="v5-km" type="number" value="350" min="0"></div>
+              <div class="field"><label for="v5-h">Час, год</label><input id="v5-h" type="number" value="5" min="0.1" step="0.1"></div>
+              <button data-act="v5">Порахувати</button>
+            </div>
+            <div class="output" id="v5-out"></div>
+          </div>
+
+          <div class="ex" id="v6">
+            <div class="ex__head"><span class="ex__num">6</span><div><div class="ex__title">Конвертор валют</div><div class="ex__desc">Долари → євро. Курс - константа <code class="mono">USD_TO_EUR</code>.</div></div></div>
+            <div class="controls">
+              <div class="field"><label for="v6-usd">USD</label><input id="v6-usd" type="number" value="100" min="0"></div>
+              <button data-act="v6">Конвертувати</button>
+            </div>
+            <div class="output" id="v6-out"></div>
+          </div>
+
+          <div class="ex" id="v7">
+            <div class="ex__head"><span class="ex__num">7</span><div><div class="ex__title">Файли на флешці</div><div class="ex__desc">Обсяг флешки (ГБ) → скільки файлів по 820 МБ влізе</div></div></div>
+            <div class="controls">
+              <div class="field"><label for="v7-gb">Флешка, ГБ</label><input id="v7-gb" type="number" value="16" min="0"></div>
+              <button data-act="v7">Порахувати</button>
+            </div>
+            <div class="output" id="v7-out"></div>
+          </div>
+
+          <div class="ex" id="v8">
+            <div class="ex__head"><span class="ex__num">8</span><div><div class="ex__title">Шоколадки та здача</div><div class="ex__desc">Гаманець і ціна шоколадки → кількість і здача</div></div></div>
+            <div class="controls">
+              <div class="field"><label for="v8-wallet">У гаманці</label><input id="v8-wallet" type="number" value="100" min="0"></div>
+              <div class="field"><label for="v8-price">Ціна шоколадки</label><input id="v8-price" type="number" value="27" min="0.01" step="0.01"></div>
+              <button data-act="v8">Порахувати</button>
+            </div>
+            <div class="output" id="v8-out"></div>
+          </div>
+
+          <div class="ex" id="v9">
+            <div class="ex__head"><span class="ex__num">9</span><div><div class="ex__title">Число-перевертень</div><div class="ex__desc">Тризначне число → паліндром через <code class="mono">%</code></div></div></div>
+            <div class="controls">
+              <div class="field"><label for="v9-num">Число (100–999)</label><input id="v9-num" type="number" value="123" min="100" max="999"></div>
+              <button data-act="v9">Перевернути</button>
+            </div>
+            <div class="output" id="v9-out"></div>
+          </div>
+
+          <div class="ex" id="v10">
+            <div class="ex__head"><span class="ex__num">10</span><div><div class="ex__title">Парне чи непарне</div><div class="ex__desc">Без <code class="mono">if</code>/<code class="mono">switch</code> - лише тернарний оператор</div></div></div>
+            <div class="controls">
+              <div class="field"><label for="v10-num">Ціле число</label><input id="v10-num" type="number" value="7"></div>
+              <button data-act="v10">Перевірити</button>
+            </div>
+            <div class="output" id="v10-out"></div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="chapter" id="loops">
+        <div class="chapter__head"><span class="chapter__num">02</span><h2>Цикли: while, do...while, for</h2></div>
+        <details class="code-panel" data-code-src="js/02-loops.js"><summary>Показати код (js/02-loops.js)</summary><pre class="mono"></pre></details>
+        <p class="chapter__note">Під кожним пунктом написав, який цикл я обрав і чому - щоб було видно, що не просто скрізь for поставив.</p>
+        <div class="grid">
+
+          <div class="ex" id="l1">
+            <div class="ex__head"><span class="ex__num">1</span><div><div class="ex__title">Сума чисел у діапазоні</div><div class="ex__desc"><span class="tag">for</span> - відома кількість кроків</div></div></div>
+            <div class="controls">
+              <div class="field"><label for="l1-a">Від</label><input id="l1-a" type="number" value="1"></div>
+              <div class="field"><label for="l1-b">До</label><input id="l1-b" type="number" value="10"></div>
+              <button data-act="l1">Порахувати</button>
+            </div>
+            <div class="output" id="l1-out"></div>
+          </div>
+
+          <div class="ex" id="l2">
+            <div class="ex__head"><span class="ex__num">2</span><div><div class="ex__title">НСД двох чисел</div><div class="ex__desc"><span class="tag">while</span> - алгоритм Евкліда, невідома кількість кроків</div></div></div>
+            <div class="controls">
+              <div class="field"><label for="l2-a">a</label><input id="l2-a" type="number" value="48"></div>
+              <div class="field"><label for="l2-b">b</label><input id="l2-b" type="number" value="18"></div>
+              <button data-act="l2">Знайти НСД</button>
+            </div>
+            <div class="output" id="l2-out"></div>
+          </div>
+
+          <div class="ex" id="l3">
+            <div class="ex__head"><span class="ex__num">3</span><div><div class="ex__title">Усі дільники числа</div><div class="ex__desc"><span class="tag">for</span> - перебір від 1 до n</div></div></div>
+            <div class="controls">
+              <div class="field"><label for="l3-n">Число</label><input id="l3-n" type="number" value="36" min="1"></div>
+              <button data-act="l3">Показати дільники</button>
+            </div>
+            <div class="output" id="l3-out"></div>
+          </div>
+
+          <div class="ex" id="l4">
+            <div class="ex__head"><span class="ex__num">4</span><div><div class="ex__title">Кількість цифр у числі</div><div class="ex__desc"><span class="tag">do...while</span> - тіло виконується хоч раз, навіть для 0</div></div></div>
+            <div class="controls">
+              <div class="field"><label for="l4-n">Число</label><input id="l4-n" type="number" value="48021"></div>
+              <button data-act="l4">Порахувати</button>
+            </div>
+            <div class="output" id="l4-out"></div>
+          </div>
+
+          <div class="ex ex--wide" id="l5" style="grid-column:1/-1">
+            <div class="ex__head"><span class="ex__num">5</span><div><div class="ex__title">Статистика 10 чисел</div><div class="ex__desc"><span class="tag">for</span> - одна змінна-«буфер» перевикористовується на кожній ітерації замість 10 окремих</div></div></div>
+            <div class="controls">
+              <div class="field" style="flex:1 1 320px"><label for="l5-nums">10 чисел через пробіл</label><input id="l5-nums" type="text" value="4 -3 0 7 -8 2 0 -1 9 -2" style="width:100%"></div>
+              <button data-act="l5">Порахувати статистику</button>
+            </div>
+            <div class="output" id="l5-out"></div>
+          </div>
+
+          <div class="ex ex--wide" id="l6" style="grid-column:1/-1">
+            <div class="ex__head"><span class="ex__num">6</span><div><div class="ex__title">Калькулятор у циклі</div><div class="ex__desc"><span class="tag">do...while</span> - рахуємо хоч раз, тоді питаємо «ще приклад?»</div></div></div>
+            <div class="controls">
+              <div class="field"><label for="l6-a">Число 1</label><input id="l6-a" type="number" value="10"></div>
+              <div class="field"><label for="l6-op">Знак</label>
+                <select id="l6-op"><option>+</option><option>-</option><option>*</option><option>/</option></select>
+              </div>
+              <div class="field"><label for="l6-b">Число 2</label><input id="l6-b" type="number" value="4"></div>
+              <button data-act="l6">= Розв'язати</button>
+              <button class="ghost" data-act="l6-clear" type="button">Відмовитись (очистити)</button>
+            </div>
+            <div class="output" id="l6-out"></div>
+          </div>
+
+          <div class="ex" id="l7">
+            <div class="ex__head"><span class="ex__num">7</span><div><div class="ex__title">Зсув цифр числа</div><div class="ex__desc"><span class="tag">for</span> - k циклічних зсувів на 1 позицію</div></div></div>
+            <div class="controls">
+              <div class="field"><label for="l7-n">Число</label><input id="l7-n" type="number" value="123456"></div>
+              <div class="field"><label for="l7-k">На скільки цифр</label><input id="l7-k" type="number" value="2" min="0"></div>
+              <button data-act="l7">Зсунути</button>
+            </div>
+            <div class="output" id="l7-out"></div>
+          </div>
+
+          <div class="ex" id="l8">
+            <div class="ex__head"><span class="ex__num">8</span><div><div class="ex__title">Дні тижня по колу</div><div class="ex__desc"><span class="tag">while(true)</span> з виходом по рішенню користувача</div></div></div>
+            <div class="controls">
+              <button data-act="l8">Почати / наступний день</button>
+              <button class="ghost" data-act="l8-stop" type="button">Досить</button>
+            </div>
+            <div class="output" id="l8-out"></div>
+          </div>
+
+          <div class="ex ex--wide" id="l9" style="grid-column:1/-1">
+            <div class="ex__head"><span class="ex__num">9</span><div><div class="ex__title">Таблиця множення 2–9</div><div class="ex__desc"><span class="tag">for</span> у <span class="tag">for</span> - вкладені цикли</div></div></div>
+            <div class="controls"><button data-act="l9">Побудувати таблицю</button></div>
+            <div class="table-wrap"><div class="output" id="l9-out"></div></div>
+          </div>
+
+          <div class="ex ex--wide" id="l10" style="grid-column:1/-1">
+            <div class="ex__head"><span class="ex__num">10</span><div><div class="ex__title">Гра «Вгадай число»</div><div class="ex__desc"><span class="tag">while</span> - ділимо діапазон 0–100 навпіл, поки не знайдемо</div></div></div>
+            <div class="controls">
+              <button data-act="l10-start">Загадати число і почати</button>
+              <button data-act="l10-less" disabled>Моє &lt; N</button>
+              <button data-act="l10-more" disabled>Моє &gt; N</button>
+              <button data-act="l10-eq" disabled>Моє == N</button>
+            </div>
+            <div class="output" id="l10-out"></div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="chapter" id="recursion">
+        <div class="chapter__head"><span class="chapter__num">03</span><h2>Рекурсія</h2></div>
+        <details class="code-panel" data-code-src="js/03-recursion.js"><summary>Показати код (js/03-recursion.js)</summary><pre class="mono"></pre></details>
+        <p class="chapter__note">Тут без жодного for/while, тільки рекурсія - як і було в умові.</p>
+        <div class="grid">
+
+          <div class="ex" id="r1">
+            <div class="ex__head"><span class="ex__num">1</span><div><div class="ex__title">Степінь числа</div><div class="ex__desc"><code class="mono">power(base, exp)</code></div></div></div>
+            <div class="controls">
+              <div class="field"><label for="r1-base">Основа</label><input id="r1-base" type="number" value="2"></div>
+              <div class="field"><label for="r1-exp">Показник</label><input id="r1-exp" type="number" value="10" min="0"></div>
+              <button data-act="r1">Обчислити</button>
+            </div>
+            <div class="output" id="r1-out"></div>
+          </div>
+
+          <div class="ex" id="r2">
+            <div class="ex__head"><span class="ex__num">2</span><div><div class="ex__title">НСД рекурсивно</div><div class="ex__desc"><code class="mono">gcd(a, b)</code></div></div></div>
+            <div class="controls">
+              <div class="field"><label for="r2-a">a</label><input id="r2-a" type="number" value="252"></div>
+              <div class="field"><label for="r2-b">b</label><input id="r2-b" type="number" value="105"></div>
+              <button data-act="r2">Знайти НСД</button>
+            </div>
+            <div class="output" id="r2-out"></div>
+          </div>
+
+          <div class="ex" id="r3">
+            <div class="ex__head"><span class="ex__num">3</span><div><div class="ex__title">Максимальна цифра</div><div class="ex__desc"><code class="mono">maxDigit(n)</code></div></div></div>
+            <div class="controls">
+              <div class="field"><label for="r3-n">Число</label><input id="r3-n" type="number" value="48021"></div>
+              <button data-act="r3">Знайти</button>
+            </div>
+            <div class="output" id="r3-out"></div>
+          </div>
+
+          <div class="ex" id="r4">
+            <div class="ex__head"><span class="ex__num">4</span><div><div class="ex__title">Просте число?</div><div class="ex__desc"><code class="mono">isPrime(n)</code></div></div></div>
+            <div class="controls">
+              <div class="field"><label for="r4-n">Число</label><input id="r4-n" type="number" value="97" min="0"></div>
+              <button data-act="r4">Перевірити</button>
+            </div>
+            <div class="output" id="r4-out"></div>
+          </div>
+
+          <div class="ex" id="r5">
+            <div class="ex__head"><span class="ex__num">5</span><div><div class="ex__title">Прості множники</div><div class="ex__desc"><code class="mono">factors(n)</code> у зростаючому порядку</div></div></div>
+            <div class="controls">
+              <div class="field"><label for="r5-n">Число</label><input id="r5-n" type="number" value="18" min="2"></div>
+              <button data-act="r5">Розкласти</button>
+            </div>
+            <div class="output" id="r5-out"></div>
+          </div>
+
+          <div class="ex" id="r6">
+            <div class="ex__head"><span class="ex__num">6</span><div><div class="ex__title">Число Фібоначчі</div><div class="ex__desc"><code class="mono">fib(n)</code> за порядковим номером (1,1,2,3,5,8,13…)</div></div></div>
+            <div class="controls">
+              <div class="field"><label for="r6-n">Порядковий номер</label><input id="r6-n" type="number" value="6" min="1"></div>
+              <button data-act="r6">Знайти</button>
+            </div>
+            <div class="output" id="r6-out"></div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="chapter" id="functions">
+        <div class="chapter__head"><span class="chapter__num">04</span><h2>Функції</h2></div>
+        <details class="code-panel" data-code-src="js/04-functions.js"><summary>Показати код (js/04-functions.js)</summary><pre class="mono"></pre></details>
+        <div class="grid">
+
+          <div class="ex" id="f1">
+            <div class="ex__head"><span class="ex__num">1</span><div><div class="ex__title">Порівняння чисел</div><div class="ex__desc">−1, 1 або 0</div></div></div>
+            <div class="controls">
+              <div class="field"><label for="f1-a">a</label><input id="f1-a" type="number" value="5"></div>
+              <div class="field"><label for="f1-b">b</label><input id="f1-b" type="number" value="8"></div>
+              <button data-act="f1">Порівняти</button>
+            </div>
+            <div class="output" id="f1-out"></div>
+          </div>
+
+          <div class="ex" id="f2">
+            <div class="ex__head"><span class="ex__num">2</span><div><div class="ex__title">Факторіал</div></div></div>
+            <div class="controls">
+              <div class="field"><label for="f2-n">n</label><input id="f2-n" type="number" value="6" min="0" max="170"></div>
+              <button data-act="f2">Обчислити</button>
+            </div>
+            <div class="output" id="f2-out"></div>
+          </div>
+
+          <div class="ex" id="f3">
+            <div class="ex__head"><span class="ex__num">3</span><div><div class="ex__title">Три цифри → число</div><div class="ex__desc">напр. 1, 4, 9 → 149</div></div></div>
+            <div class="controls">
+              <div class="field"><label for="f3-d1">1</label><input id="f3-d1" type="number" value="1" min="0" max="9"></div>
+              <div class="field"><label for="f3-d2">2</label><input id="f3-d2" type="number" value="4" min="0" max="9"></div>
+              <div class="field"><label for="f3-d3">3</label><input id="f3-d3" type="number" value="9" min="0" max="9"></div>
+              <button data-act="f3">Скласти число</button>
+            </div>
+            <div class="output" id="f3-out"></div>
+          </div>
+
+          <div class="ex" id="f4">
+            <div class="ex__head"><span class="ex__num">4</span><div><div class="ex__title">Площа прямокутника / квадрата</div><div class="ex__desc">Без ширини - функція рахує квадрат</div></div></div>
+            <div class="controls">
+              <div class="field"><label for="f4-w">Довжина</label><input id="f4-w" type="number" value="5" min="0"></div>
+              <div class="field"><label for="f4-h">Ширина (необов'язково)</label><input id="f4-h" type="number" placeholder="-" min="0"></div>
+              <button data-act="f4">Порахувати</button>
+            </div>
+            <div class="output" id="f4-out"></div>
+          </div>
+
+          <div class="ex" id="f5">
+            <div class="ex__head"><span class="ex__num">5</span><div><div class="ex__title">Досконале число?</div><div class="ex__desc">Дорівнює сумі власних дільників. Напр. 6 = 1+2+3</div></div></div>
+            <div class="controls">
+              <div class="field"><label for="f5-n">Число</label><input id="f5-n" type="number" value="28" min="1"></div>
+              <button data-act="f5">Перевірити</button>
+            </div>
+            <div class="output" id="f5-out"></div>
+          </div>
+
+          <div class="ex" id="f6">
+            <div class="ex__head"><span class="ex__num">6</span><div><div class="ex__title">Досконалі числа в діапазоні</div><div class="ex__desc">Використовує функцію із завдання 5</div></div></div>
+            <div class="controls">
+              <div class="field"><label for="f6-min">Від</label><input id="f6-min" type="number" value="1" min="1"></div>
+              <div class="field"><label for="f6-max">До</label><input id="f6-max" type="number" value="10000"></div>
+              <button data-act="f6">Знайти</button>
+            </div>
+            <div class="output" id="f6-out"></div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="chapter" id="objects">
+        <div class="chapter__head"><span class="chapter__num">05</span><h2>Об'єкти</h2></div>
+        <details class="code-panel" data-code-src="js/05-objects.js"><summary>Показати код (js/05-objects.js)</summary><pre class="mono"></pre></details>
+        <div class="grid grid--wide">
+
+          <div class="ex" id="o1">
+            <div class="ex__head"><span class="ex__num">1</span><div><div class="ex__title">Автомобіль</div><div class="ex__desc">Об'єкт + метод інформації та розрахунок часу в дорозі з перервами кожні 4 години</div></div></div>
+            <div class="controls">
+              <div class="field"><label for="o1-make">Виробник</label><input id="o1-make" value="Skoda"></div>
+              <div class="field"><label for="o1-model">Модель</label><input id="o1-model" value="Octavia"></div>
+              <div class="field"><label for="o1-year">Рік</label><input id="o1-year" type="number" value="2021"></div>
+              <div class="field"><label for="o1-speed">Серед. швидкість, км/год</label><input id="o1-speed" type="number" value="90" min="1"></div>
+            </div>
+            <div class="controls"><button data-act="o1-info">Інформація про авто</button></div>
+            <div class="controls">
+              <div class="field"><label for="o1-dist">Відстань, км</label><input id="o1-dist" type="number" value="500" min="0"></div>
+              <button data-act="o1-time">Час у дорозі</button>
+            </div>
+            <div class="output" id="o1-out"></div>
+          </div>
+
+          <div class="ex" id="o2">
+            <div class="ex__head"><span class="ex__num">2</span><div><div class="ex__title">Дроби</div><div class="ex__desc">Два об'єкти-дроби: +, −, ×, ÷ та скорочення</div></div></div>
+            <div class="controls">
+              <div class="field"><label for="o2-n1">Чисельник 1</label><input id="o2-n1" type="number" value="2"></div>
+              <div class="field"><label for="o2-d1">Знаменник 1</label><input id="o2-d1" type="number" value="4"></div>
+              <div class="field"><label for="o2-op">Дія</label><select id="o2-op"><option value="add">+</option><option value="sub">−</option><option value="mul">×</option><option value="div">÷</option></select></div>
+              <div class="field"><label for="o2-n2">Чисельник 2</label><input id="o2-n2" type="number" value="1"></div>
+              <div class="field"><label for="o2-d2">Знаменник 2</label><input id="o2-d2" type="number" value="3"></div>
+              <button data-act="o2">Обчислити</button>
+            </div>
+            <div class="output" id="o2-out"></div>
+          </div>
+
+          <div class="ex" id="o3">
+            <div class="ex__head"><span class="ex__num">3</span><div><div class="ex__title">Час</div><div class="ex__desc">Об'єкт години/хвилини/секунди + зсув на N секунд, хвилин, годин</div></div></div>
+            <div class="controls">
+              <div class="field"><label for="o3-h">Год</label><input id="o3-h" type="number" value="23" min="0" max="23"></div>
+              <div class="field"><label for="o3-m">Хв</label><input id="o3-m" type="number" value="50" min="0" max="59"></div>
+              <div class="field"><label for="o3-s">Сек</label><input id="o3-s" type="number" value="0" min="0" max="59"></div>
+              <button data-act="o3-show">Показати час</button>
+            </div>
+            <div class="controls">
+              <div class="field"><label for="o3-add-s">Додати секунд</label><input id="o3-add-s" type="number" value="30"></div>
+              <button data-act="o3-add-s">+ сек</button>
+              <div class="field"><label for="o3-add-m">Додати хвилин</label><input id="o3-add-m" type="number" value="20"></div>
+              <button data-act="o3-add-m">+ хв</button>
+              <div class="field"><label for="o3-add-h">Додати годин</label><input id="o3-add-h" type="number" value="3"></div>
+              <button data-act="o3-add-h">+ год</button>
+            </div>
+            <div class="output" id="o3-out"></div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="chapter" id="arrays">
+        <div class="chapter__head"><span class="chapter__num">06</span><h2>Масиви</h2></div>
+        <details class="code-panel" data-code-src="js/06-arrays.js"><summary>Показати код (js/06-arrays.js)</summary><pre class="mono"></pre></details>
+        <div class="grid grid--wide">
+
+          <div class="ex" id="a1">
+            <div class="ex__head"><span class="ex__num">1</span><div><div class="ex__title">Список покупок</div><div class="ex__desc">Некуплені зверху, куплені знизу; додавання збільшує кількість, якщо товар вже є</div></div></div>
+            <div class="controls">
+              <div class="field"><label for="a1-name">Товар</label><input id="a1-name" placeholder="Молоко"></div>
+              <div class="field"><label for="a1-qty">К-сть</label><input id="a1-qty" type="number" value="1" min="1"></div>
+              <button data-act="a1-add">Додати</button>
+            </div>
+            <ul class="list-reset" id="a1-list"></ul>
+          </div>
+
+          <div class="ex" id="a2">
+            <div class="ex__head"><span class="ex__num">2</span><div><div class="ex__title">Чек з магазину</div><div class="ex__desc">Сума, найдорожча покупка, середня вартість одиниці товару</div></div></div>
+            <div class="table-wrap" id="a2-table"></div>
+            <div class="output" id="a2-out"></div>
+          </div>
+
+          <div class="ex" id="a3">
+            <div class="ex__head"><span class="ex__num">3</span><div><div class="ex__title">Масив CSS-стилів</div><div class="ex__desc">Текст + масив {назва, значення} → елемент із атрибутом style. Вставка через безпечний <code class="mono">innerHTML</code>-білдер, не <code class="mono">document.write()</code> (він стер би сторінку)</div></div></div>
+            <div class="controls">
+              <div class="field" style="flex:1 1 260px"><label for="a3-text">Текст</label><input id="a3-text" style="width:100%" value="Привіт, зошите!"></div>
+            </div>
+            <div class="controls">
+              <div class="field"><label for="a3-color">color</label><input id="a3-color" type="color" value="#1f6f63"></div>
+              <div class="field"><label for="a3-size">font-size (px)</label><input id="a3-size" type="number" value="22" min="8"></div>
+              <div class="field"><label for="a3-align">text-align</label><select id="a3-align"><option>left</option><option selected>center</option><option>right</option></select></div>
+              <div class="field"><label for="a3-underline">text-decoration</label><select id="a3-underline"><option value="none">none</option><option value="underline">underline</option></select></div>
+              <button data-act="a3">Застосувати масив стилів</button>
+            </div>
+            <div id="a3-preview" class="output"></div>
+            <pre class="output mono" id="a3-code" style="font-size:11.5px"></pre>
+          </div>
+
+          <div class="ex" id="a4">
+            <div class="ex__head"><span class="ex__num">4</span><div><div class="ex__title">Аудиторії академії</div><div class="ex__desc">Список, фільтр за кафедрою, фільтр за групою, сортування</div></div></div>
+            <div class="controls">
+              <button data-act="a4-all">Усі аудиторії</button>
+              <div class="field"><label for="a4-dept">Кафедра</label>
+                <select id="a4-dept"></select>
+              </div>
+              <button data-act="a4-dept">Фільтр за кафедрою</button>
+              <button data-act="a4-seats">↕ За місткістю</button>
+              <button data-act="a4-name">↕ За назвою</button>
+            </div>
+            <div class="controls">
+              <div class="field"><label for="a4-group">Назва групи</label><input id="a4-group" value="ІПЗ-21"></div>
+              <div class="field"><label for="a4-students">Студентів</label><input id="a4-students" type="number" value="18" min="1"></div>
+              <div class="field"><label for="a4-group-dept">Кафедра групи</label><select id="a4-group-dept"></select></div>
+              <button data-act="a4-group">Підібрати аудиторію</button>
+            </div>
+            <div class="table-wrap" id="a4-out"></div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="chapter" id="oop-html">
+        <div class="chapter__head"><span class="chapter__num">07</span><h2>ООП: геометрія та HTML-конструктор</h2></div>
+        <details class="code-panel" data-code-src="js/07-oop-html.js"><summary>Показати код (js/07-oop-html.js)</summary><pre class="mono"></pre></details>
+        <div class="grid grid--wide">
+
+          <div class="ex" id="h1">
+            <div class="ex__head"><span class="ex__num">1</span><div><div class="ex__title">Клас Circle</div><div class="ex__desc">get/set радіуса, get діаметра, методи площі та довжини кола</div></div></div>
+            <div class="controls">
+              <div class="field"><label for="h1-r">Радіус (set radius)</label><input id="h1-r" type="number" value="4" min="0"></div>
+              <button data-act="h1">Застосувати та показати</button>
+            </div>
+            <div class="output" id="h1-out"></div>
+          </div>
+
+          <div class="ex ex--wide" id="h2" style="grid-column:1/-1">
+            <div class="ex__head"><span class="ex__num">2–4</span><div><div class="ex__title">HtmlElement, CssClass, HtmlBlock</div><div class="ex__desc">Класи будують HTML/CSS-рядок через <code class="mono">getHtml()</code> / <code class="mono">getCss()</code> / <code class="mono">getCode()</code>. Вставка в сторінку - через контрольований <code class="mono">innerHTML</code> контейнера-обгортки (повний еквівалент <code class="mono">document.write()</code>, але без стирання всієї сторінки).</div></div></div>
+            <div class="controls"><button data-act="h2">Згенерувати блок wrapper</button></div>
+            <div class="note">Намагався повторити приклад з методички один в один: два блоки «What is Lorem Ipsum?» у flex-обгортці, стилі через клас CssClass. Картинку взяв заглушку, бо lipsum.jpg у мене немає.</div>
+            <div id="h2-preview"></div>
+            <pre class="output mono" id="h2-code" style="font-size:11.5px;max-height:260px;overflow:auto"></pre>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="chapter" id="oop-marker">
+        <div class="chapter__head"><span class="chapter__num">08</span><h2>ООП: маркер, дата, таблиця працівників</h2></div>
+        <details class="code-panel" data-code-src="js/08-oop-marker.js"><summary>Показати код (js/08-oop-marker.js)</summary><pre class="mono"></pre></details>
+        <div class="grid grid--wide">
+
+          <div class="ex" id="m1">
+            <div class="ex__head"><span class="ex__num">1</span><div><div class="ex__title">Маркер, що заправляється</div><div class="ex__desc"><code class="mono">RefillableMarker extends Marker</code>. 1 непробільний символ = 0,5% чорнила</div></div></div>
+            <div class="controls">
+              <div class="field"><label for="m1-color">Колір</label><input id="m1-color" type="color" value="#c96f2e"></div>
+              <div class="field"><label for="m1-text">Текст для друку</label><input id="m1-text" style="width:220px" value="Привіт, зошите! Це тест маркера."></div>
+              <button data-act="m1-print">Друкувати</button>
+              <button class="ghost" data-act="m1-refill" type="button">Заправити</button>
+            </div>
+            <div class="output" id="m1-meta"></div>
+            <div class="output" id="m1-out"></div>
+          </div>
+
+          <div class="ex" id="m2">
+            <div class="ex__head"><span class="ex__num">2</span><div><div class="ex__title">ExtendedDate</div><div class="ex__desc"><code class="mono">class ExtendedDate extends Date</code></div></div></div>
+            <div class="controls">
+              <div class="field"><label for="m2-date">Дата</label><input id="m2-date" type="date"></div>
+              <button data-act="m2-text">Текстом</button>
+              <button data-act="m2-future">Минула / майбутня?</button>
+              <button data-act="m2-leap">Високосний рік?</button>
+              <button data-act="m2-next">Наступна дата</button>
+            </div>
+            <div class="output" id="m2-out"></div>
+          </div>
+
+          <div class="ex ex--wide" id="m3" style="grid-column:1/-1">
+            <div class="ex__head"><span class="ex__num">3–4</span><div><div class="ex__title">Employee, EmpTable, StyledEmpTable</div><div class="ex__desc"><code class="mono">StyledEmpTable extends EmpTable</code> - додає <code class="mono">getStyles()</code> і перевизначає <code class="mono">getHtml()</code></div></div></div>
+            <div class="controls"><button data-act="m3">Побудувати таблицю працівників</button></div>
+            <div id="m3-preview"></div>
+            <pre class="output mono" id="m3-code" style="font-size:11.5px;max-height:220px;overflow:auto"></pre>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="chapter" id="goals">
+        <div class="chapter__head"><span class="chapter__num">09</span><h2>Мій список цілей 🎯</h2></div>
+        <details class="code-panel" data-code-src="js/09-goals.js"><summary>Показати код (js/09-goals.js)</summary><pre class="mono"></pre></details>
+        <p class="chapter__note">Зробив трохи більше, ніж просили: додав збереження у localStorage, щоб цілі не зникали, якщо випадково оновити сторінку.</p>
+        <div class="ex" style="max-width:640px">
+          <form id="g-form" novalidate>
+            <div class="controls">
+              <div class="field" style="flex:1 1 320px">
+                <label for="g-input">Нова ціль</label>
+                <input id="g-input" type="text" placeholder="Напр. Пробігти 5 км" autocomplete="off">
+              </div>
+              <button type="submit">Додати</button>
+            </div>
+            <div class="output err" id="g-error" style="display:none;margin-top:8px"></div>
+          </form>
+
+          <div class="pill-row" style="margin:16px 0 4px" role="group" aria-label="Фільтр цілей">
+            <button class="filter-btn small active" data-filter="all" type="button">Усі</button>
+            <button class="filter-btn small" data-filter="active" type="button">Активні</button>
+            <button class="filter-btn small" data-filter="done" type="button">Виконані</button>
+          </div>
+          <div class="goal-stats" id="g-stats" style="margin:4px 0 14px"></div>
+
+          <ul class="list-reset" id="g-list"></ul>
+        </div>
+      </section>
+
+      <section class="chapter" id="cart">
+        <div class="chapter__head"><span class="chapter__num">10</span><h2>Кошик покупок</h2></div>
+        <details class="code-panel" data-code-src="js/10-cart.js"><summary>Показати код (js/10-cart.js)</summary><pre class="mono"></pre></details>
+        <p class="chapter__note">Товари - той самий масив products, що й у завданні. Про onclick і innerHTML з текстом користувача пам'ятав весь час, поки писав, здається ніде не накосячив.</p>
+        <div class="ex cart-shell" id="cart-shell">
+          <div class="controls" style="padding:16px 16px 0">
+            <div class="field" style="flex:1 1 220px"><label for="c-search">Пошук товару</label><input id="c-search" placeholder="laptop…" style="width:100%"></div>
+            <button class="ghost" id="c-dark-toggle" type="button">🌓 Dark mode</button>
+          </div>
+          <div class="grid" id="c-products" style="padding:16px"></div>
+          <div style="padding:0 16px 16px">
+            <div class="controls">
+              <div class="output mono" id="c-summary" style="flex:1 1 220px"></div>
+              <button class="ghost" id="c-empty" type="button">Спорожнити кошик</button>
+            </div>
+            <ul class="list-reset" id="c-list" style="margin-top:10px"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter" id="colors">
+        <div class="chapter__head"><span class="chapter__num">11</span><h2>Палітра кольорів + Cookie</h2></div>
+        <details class="code-panel" data-code-src="js/11-colors.js"><summary>Показати код (js/11-colors.js)</summary><pre class="mono"></pre></details>
+        <p class="chapter__note">Кольори зберігаються у cookie на 3 години, як і сказано в завданні. Можете оновити сторінку - список нікуди не дінеться, поки cookie не протухне.</p>
+        <div class="ex" style="max-width:640px">
+          <form id="col-form" novalidate>
+            <div class="controls">
+              <div class="field"><label for="col-name">Назва (тільки літери)</label><input id="col-name" placeholder="sunset"></div>
+              <div class="field"><label for="col-type">Тип</label>
+                <select id="col-type"><option value="RGB">RGB</option><option value="RGBA">RGBA</option><option value="HEX">HEX</option></select>
+              </div>
+              <div class="field" style="flex:1 1 180px"><label for="col-value" id="col-value-label">Код (R, G, B)</label><input id="col-value" placeholder="255, 99, 71" style="width:100%"></div>
+              <button type="submit">Save</button>
+            </div>
+            <div class="output err" id="col-error" style="display:none;margin-top:8px"></div>
+          </form>
+          <ul class="list-reset" id="col-list" style="margin-top:16px"></ul>
+        </div>
+      </section>
+
+      <section class="chapter" id="movies">
+        <div class="chapter__head"><span class="chapter__num">12</span><h2>Пошук фільмів - JSON, Ajax</h2></div>
+        <details class="code-panel" data-code-src="js/12-movies.js"><summary>Показати код (js/12-movies.js)</summary><pre class="mono"></pre></details>
+        <div class="note warn" style="max-width:720px;margin-bottom:16px">
+          <b>Якщо пошук не спрацював:</b> швидше за все ви дивитесь цю сторінку у вбудованому перегляді - там чужі запити до API (в тому числі до OMDB) просто не проходять через політику безпеки. У мене самого так було, поки не відкрив файли окремо в браузері - там з тим самим ключем усе шукає нормально.
+        </div>
+        <div class="ex" style="max-width:760px">
+          <div class="controls">
+            <div class="field"><label for="mv-key">OMDB API key</label><input id="mv-key" value="dea0933e" style="width:140px"></div>
+            <div class="field" style="flex:1 1 220px"><label for="mv-title">Назва фільму</label><input id="mv-title" value="batman" style="width:100%"></div>
+            <div class="field"><label for="mv-type">Тип</label>
+              <select id="mv-type"><option value="">будь-який</option><option value="movie">movie</option><option value="series">series</option><option value="episode">episode</option></select>
+            </div>
+            <button data-act="mv-search">Search</button>
+          </div>
+          <div class="output" id="mv-status"></div>
+          <div class="grid" id="mv-results" style="margin-top:12px"></div>
+          <div class="controls" id="mv-pager" style="margin-top:10px"></div>
+          <div class="ex" id="mv-details" style="display:none;margin-top:14px"></div>
+        </div>
+      </section>
+
+      <section class="chapter" id="promises">
+        <div class="chapter__head"><span class="chapter__num">13</span><h2>Promises, async/await</h2></div>
+        <details class="code-panel" data-code-src="js/13-promises.js"><summary>Показати код (js/13-promises.js)</summary><pre class="mono"></pre></details>
+        <p class="chapter__note">Тут мережа не потрібна - затримки імітую через setTimeout, тому все нормально крутиться прямо тут, без заходів у браузер.</p>
+        <div class="grid grid--wide">
+
+          <div class="ex" id="p1">
+            <div class="ex__head"><span class="ex__num">1</span><div><div class="ex__title">processArray(array, callback)</div></div></div>
+            <div class="controls">
+              <div class="field" style="flex:1"><label for="p1-arr">Масив</label><input id="p1-arr" value="1, 2, 3, 4, 5" style="width:100%"></div>
+              <div class="field"><label for="p1-cb">Callback</label><select id="p1-cb"><option value="double">doubleElement</option><option value="reverse">reverseElement</option></select></div>
+              <button data-act="p1">Виконати</button>
+            </div>
+            <div class="output" id="p1-out"></div>
+          </div>
+
+          <div class="ex" id="p2">
+            <div class="ex__head"><span class="ex__num">2</span><div><div class="ex__title">filterArray(array, callback)</div></div></div>
+            <div class="controls">
+              <div class="field" style="flex:1"><label for="p2-arr">Масив</label><input id="p2-arr" value="1, 2, 3, 4, 5" style="width:100%"></div>
+              <div class="field"><label for="p2-cb">Callback</label><select id="p2-cb"><option value="even">isEven</option><option value="short">isShortWord</option></select></div>
+              <button data-act="p2">Фільтрувати</button>
+            </div>
+            <div class="output" id="p2-out"></div>
+          </div>
+
+          <div class="ex ex--wide" id="p3" style="grid-column:1/-1">
+            <div class="ex__head"><span class="ex__num">3</span><div><div class="ex__title">Ланцюжок хатніх справ</div><div class="ex__desc">washDishes (2с) → cleanRoom (4с) → makeDinner (7с), послідовно через <code class="mono">.then()</code></div></div></div>
+            <div class="controls"><button data-act="p3">Почати вечір</button></div>
+            <div class="output" id="p3-out"></div>
+          </div>
+
+          <div class="ex" id="p4">
+            <div class="ex__head"><span class="ex__num">4</span><div><div class="ex__title">sortArray(array)</div><div class="ex__desc">reject, якщо масив порожній</div></div></div>
+            <div class="controls">
+              <div class="field" style="flex:1"><label for="p4-arr">Масив (можна залишити порожнім)</label><input id="p4-arr" value="5, 1, 4, 2, 3" style="width:100%"></div>
+              <button data-act="p4">Сортувати</button>
+            </div>
+            <div class="output" id="p4-out"></div>
+          </div>
+
+          <div class="ex" id="p5">
+            <div class="ex__head"><span class="ex__num">5</span><div><div class="ex__title">multiplyAsync(a, b)</div><div class="ex__desc"><code class="mono">async main()</code> множить 6 і 9</div></div></div>
+            <div class="controls">
+              <div class="field"><label for="p5-a">a</label><input id="p5-a" value="6"></div>
+              <div class="field"><label for="p5-b">b</label><input id="p5-b" value="9"></div>
+              <button data-act="p5">main()</button>
+            </div>
+            <div class="output" id="p5-out"></div>
+          </div>
+
+          <div class="ex" id="p6">
+            <div class="ex__head"><span class="ex__num">6</span><div><div class="ex__title">sortArrayAsync(array)</div><div class="ex__desc">throw, якщо масив порожній</div></div></div>
+            <div class="controls">
+              <div class="field" style="flex:1"><label for="p6-arr">Масив</label><input id="p6-arr" value="9, 3, 7, 1" style="width:100%"></div>
+              <button data-act="p6">main()</button>
+            </div>
+            <div class="output" id="p6-out"></div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="chapter" id="server">
+        <div class="chapter__head"><span class="chapter__num">14</span><h2>Взаємодія із сервером</h2></div>
+        <details class="code-panel" data-code-src="js/14-server.js"><summary>Показати код (js/14-server.js)</summary><pre class="mono"></pre></details>
+        <div class="note warn" style="max-width:720px;margin-bottom:16px">
+          <b>Якщо кнопки нічого не повертають:</b> та сама історія, що й з фільмами вище - вбудований перегляд не пускає запити до adviceslip / dog.ceo / api-ninjas / restcountries. Відкрийте файли сайту окремо в браузері, там усі чотири пункти реально ходять в мережу.
+        </div>
+        <div class="grid grid--wide">
+
+          <div class="ex" id="s1">
+            <div class="ex__head"><span class="ex__num">1</span><div><div class="ex__title">Поради за ключовим словом</div><div class="ex__desc"><code class="mono">XMLHttpRequest</code> → api.adviceslip.com</div></div></div>
+            <div class="controls">
+              <div class="field"><label for="s1-kw">Слово</label><input id="s1-kw" value="life"></div>
+              <button data-act="s1">Шукати</button>
+            </div>
+            <div class="output" id="s1-out"></div>
+          </div>
+
+          <div class="ex" id="s2">
+            <div class="ex__head"><span class="ex__num">2</span><div><div class="ex__title">Породи собак</div><div class="ex__desc"><code class="mono">XMLHttpRequest</code> → dog.ceo/api/breeds/list/all</div></div></div>
+            <div class="controls"><button data-act="s2">Завантажити список</button></div>
+            <ul class="list-reset" id="breed-list" style="max-height:200px;overflow:auto"></ul>
+          </div>
+
+          <div class="ex" id="s3">
+            <div class="ex__head"><span class="ex__num">3</span><div><div class="ex__title">Випадкова цитата</div><div class="ex__desc"><code class="mono">fetch</code> → api-ninjas, заголовок <code class="mono">X-Api-Key</code></div></div></div>
+            <div class="controls">
+              <div class="field"><label for="s3-key">API key</label><input id="s3-key" value="EyakjNMbIIivuoWpaqOUa6nhRSUXev2ijyR19K8I" style="width:100%"></div>
+            </div>
+            <div class="controls"><button data-act="s3">Нова цитата</button></div>
+            <div class="output" id="quote-container"></div>
+          </div>
+
+          <div class="ex" id="s4">
+            <div class="ex__head"><span class="ex__num">4</span><div><div class="ex__title">Інформація про країну</div><div class="ex__desc"><code class="mono">fetch</code> → restcountries.com</div></div></div>
+            <div class="controls">
+              <div class="field"><label for="s4-name">Назва країни</label><input id="s4-name" value="Ukraine"></div>
+              <button data-act="s4">Знайти</button>
+            </div>
+            <div class="output" id="country-info"></div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      Зробив для курсу «Вступ до JavaScript / JavaScript Advanced». Код розкиданий по файлах js/*.js - по одному на розділ, так простіше було не заплутатись.
+    </footer>
+  </div>
+</div>
+
+<script src="js/app.js" defer></script>
+<script src="js/01-variables.js" defer></script>
+<script src="js/02-loops.js" defer></script>
+<script src="js/03-recursion.js" defer></script>
+<script src="js/04-functions.js" defer></script>
+<script src="js/05-objects.js" defer></script>
+<script src="js/06-arrays.js" defer></script>
+<script src="js/07-oop-html.js" defer></script>
+<script src="js/08-oop-marker.js" defer></script>
+<script src="js/09-goals.js" defer></script>
+<script src="js/10-cart.js" defer></script>
+<script src="js/11-colors.js" defer></script>
+<script src="js/12-movies.js" defer></script>
+<script src="js/13-promises.js" defer></script>
+<script src="js/14-server.js" defer></script>
